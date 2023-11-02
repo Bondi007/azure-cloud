@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: bondiazurecloud 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bondiazurecloud
+  template:
+    metadata:
+      labels:
+        app: bondiazurecloud 
+    spec:
+      containers:
+        - name: bondiazurecloud 
+          image: newazurepetstorecr.azurecr.io/bondiazurecloud
+          ports:
+          - containerPort: 80
